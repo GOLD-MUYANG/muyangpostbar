@@ -1,0 +1,24 @@
+spring:
+#热部署生效
+  devtools:
+    restart:
+      enabled: false
+#数据源连接信息
+  datasource:
+    username: root
+    password: muyang123
+    url: jdbc:mysql://localhost:3306/springboot_use?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mybatis:
+    configuration:
+      map-underscore-to-camel-case: true
+#      这里配置的是后台资源在本机的地址，加上以后，在8080（后端）端口就可以直接访问了。
+  web:
+    resources:
+      static-locations: file:C://Users//lenovo//Pictures//Saved Pictures
+
+mybatis-plus:
+  mapper-locations: classpath:mappers/*.xml
+  configuration:
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
